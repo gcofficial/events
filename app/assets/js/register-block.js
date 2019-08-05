@@ -1,12 +1,5 @@
 ( function( blocks, element ) {
     var el = element.createElement;
- 
-    var blockStyle = {
-        backgroundColor: '#900',
-        color: '#fff',
-        padding: '20px',
-    };
- 
     blocks.registerBlockType( 'gutenberg-examples/example-01-basic', {
         title: 'Lolita Events',
         icon: wp.element.createElement(
@@ -31,7 +24,7 @@
                 )
             )
         ),
-        category: 'layout',
+        category: 'common',
         edit: function() {
             return el(
                 'lf-events',
