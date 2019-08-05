@@ -1,0 +1,6 @@
+[
+	{
+		"tag": "lf-events",
+		"func": ["\\events\\Events", "shortcode"]
+	}
+]
