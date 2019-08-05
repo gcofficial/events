@@ -8,8 +8,11 @@ use \events\Main;
  * List Widget
  */
 class ListWidget extends WP_Widget {
-	function __construct() {
-		// Instantiate the parent object
+
+	/**
+	 * Widget constructor
+	 */
+	public function __construct() {
 		parent::__construct(
 			'lolita_events',
 			'Lolita Events',
@@ -17,7 +20,14 @@ class ListWidget extends WP_Widget {
 		);
 	}
 
-	function widget( $args, $instance ) {
+	/**
+	 * Show widget
+	 *
+	 * @param  array $args     widget arguments.
+	 * @param  array $instance saved data.
+	 * @return void
+	 */
+	public function widget( $args, $instance ) {
 		$args['title'] = apply_filters( 'widget_title', $instance['title'] );
 		echo Main::render(
 			$args,
@@ -25,14 +35,27 @@ class ListWidget extends WP_Widget {
 		);
 	}
 
-	function update( $new_instance, $old_instance ) {
+	/**
+	 * Update widget options
+	 *
+	 * @param  array $new_instance input.
+	 * @param  array $old_instance old instance.
+	 * @return array               output.
+	 */
+	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 
 		return $instance;
 	}
 
-	function form( $instance ) {
+	/**
+	 * Show widget options on form
+	 *
+	 * @param  array $instance saved data.
+	 * @return void
+	 */
+	public function form( $instance ) {
 		echo Main::render(
 			array(
 				'title_id'   => $this->get_field_id( 'title' ),

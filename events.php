@@ -20,6 +20,10 @@ if ( ! defined( 'LF_EVENTS_URL' ) ) {
 	define( 'LF_EVENTS_URL', plugin_dir_url( __FILE__ ) );
 }
 
+if ( ! defined( 'LF_EVENTS_VERION' ) ) {
+	define( 'LF_EVENTS_VERION', '1.0.0' );
+}
+
 // ==============================================================
 // Bootstraping
 // ==============================================================

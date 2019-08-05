@@ -1,5 +1,6 @@
 <?php
 namespace events;
+
 use \LolitaFramework\LF;
 use \LolitaFramework\Data\Loc;
 /**
@@ -113,12 +114,21 @@ class Assets {
 		);
 	}
 
+	/**
+	 * Is events settings condition
+	 *
+	 * @return boolean
+	 */
 	public static function is_events_settings() {
-		
 		return 'events-settings' === Lf::get( $_GET, 'page', '' ) || 'event' === Lf::get( (array) Loc::post(), 'post_type', '' ) || ! is_admin();
 	}
 
+	/**
+	 * CSS version
+	 *
+	 * @return number
+	 */
 	public static function version() {
-		return 1;
+		return LF_EVENTS_VERION;
 	}
 }

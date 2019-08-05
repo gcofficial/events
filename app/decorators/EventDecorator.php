@@ -7,10 +7,16 @@ use \LolitaFramework\Data\Chain;
  * Evetn decorator
  */
 class EventDecorator {
+	/**
+	 * Decorate all meta
+	 *
+	 * @param  stdClass $post input post.
+	 * @return stdClass
+	 */
 	public static function all_meta( $post ) {
 		$post->meta = (object) Chain::of( get_post_meta( $post->ID ) )
 			->map(
-				function($el) {
+				function( $el ) {
 					return $el[0];
 				}
 			)
@@ -18,6 +24,11 @@ class EventDecorator {
 		return $post;
 	}
 
+	/**
+	 * Decorate default meta value
+	 *
+	 * @param stdClass $post input post.
+	 */
 	public static function set_defaults_meta( $post ) {
 		$post->meta = (object) array_merge(
 			array(
@@ -30,6 +41,12 @@ class EventDecorator {
 		return $post;
 	}
 
+	/**
+	 * Decorate post image
+	 *
+	 * @param  stdClass $post input post.
+	 * @return stdClass
+	 */
 	public static function image( $post ) {
 		$attachment_id = get_post_thumbnail_id( $post );
 		$image = wp_get_attachment_image_src( $attachment_id, 'full', false );

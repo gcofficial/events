@@ -5,4 +5,5 @@ if ( ! empty( $title ) ) {
 }
 ?>
 <lf-events></lf-events>
-<?php echo $after_widget;
+<?php
+echo $after_widget;

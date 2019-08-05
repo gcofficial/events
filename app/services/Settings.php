@@ -22,11 +22,27 @@ class Settings {
 		echo Main::render( array(), 'events-settings' );
 	}
 
+	/**
+	 * Save settings
+	 *
+	 * @return void
+	 */
 	public static function save_settings() {
 		Main::check_ajax_referer( self::NONCE, 'nonce' );
-		wp_send_json_success( update_option( self::NONCE . '_google_api', $_POST['api'] ) );
+		// phpcs:disable
+		if ( isset( $_POST['api'] ) ) {
+			wp_send_json_success( update_option( self::NONCE . '_google_api', wp_unslash( $_POST['api'] ) ) );
+		} else {
+			wp_send_json_error( 'API is required!' );
+		}
+		// phpcs:enable
 	}
 
+	/**
+	 * Get settings data
+	 *
+	 * @return array
+	 */
 	public static function data() {
 		return array(
 			'nonce'      => wp_create_nonce( self::NONCE ),
@@ -35,6 +51,11 @@ class Settings {
 		);
 	}
 
+	/**
+	 * Get google api
+	 *
+	 * @return string
+	 */
 	public static function api() {
 		return get_option( self::NONCE . '_google_api', 'AIzaSyBXr6Pu3fynyEfRBWnWx1Q6dkSkhVQ-hZU' );
 	}

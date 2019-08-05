@@ -10,12 +10,28 @@ use \events\Main;
  */
 class Events {
 
+	/**
+	 * Ajax [lf-events-get]
+	 *
+	 * @return void
+	 */
 	public static function get() {
+		// phpcs:disable
+		$from = isset( $_POST['from'] ) ? sanitize_text_field( wp_unslash( $_POST['from'] ) ) : '';
+		$to   = isset( $_POST['to'] ) ? sanitize_text_field( wp_unslash( $_POST['to'] ) ) : '';
 		wp_send_json_success(
-			self::all_events( $_POST['from'], $_POST['to'] )
+			self::all_events( $from, $to )
 		);
+		// phpcs:enable
 	}
 
+	/**
+	 * Get all events
+	 *
+	 * @param  string $from from date.
+	 * @param  string $to   to date.
+	 * @return array
+	 */
 	public static function all_events( $from, $to ) {
 		return Chain::of(
 			get_posts(
@@ -28,10 +44,10 @@ class Events {
 					'suppress_filters' => true,
 					'meta_query' => array(
 						array(
-							'key' => 'from',
-							'value' => array($from, $to),
+							'key'     => 'from',
+							'value'   => array( $from, $to ),
 							'compare' => 'BETWEEN',
-							'type' => 'DATE'
+							'type'    => 'DATE',
 						),
 					),
 				)
@@ -39,7 +55,7 @@ class Events {
 		)
 		->map(
 			function( $p ) {
-				return Chain::of($p)
+				return Chain::of( $p )
 					->bind( array( '\events\EventDecorator', 'all_meta' ) )
 					->bind( array( '\events\EventDecorator', 'set_defaults_meta' ) )
 					->bind( array( '\events\EventDecorator', 'image' ) )
@@ -70,9 +86,5 @@ class Events {
 			}
 		)
 		->value();
-	}
-
-	public static function shortcode( $atts, $content = '' ) {
-		return Main::render(array(), 'events-widget');
 	}
 }
