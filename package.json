@@ -1,0 +1,30 @@
+{
+  "name": "lf-events",
+  "version": "1.0.0",
+  "description": "WordPress events plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcofficial/events.git"
+  },
+  "keywords": [
+    "events",
+    "wp",
+    "lolita"
+  ],
+  "author": "Eugen Guriev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gcofficial/events/issues"
+  },
+  "homepage": "https://github.com/gcofficial/events#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-clean": "^0.4.0"
+  }
+}
