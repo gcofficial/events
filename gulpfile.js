@@ -27,6 +27,12 @@ task(
         '!app/vue/README.md',
         '!app/vue/dist/favicon.ico',
         '!app/vue/dist/index.html',
+        '!LolitaFramework/vendor/**',
+        '!LolitaFramework/wpcs/**',
+        '!LolitaFramework/phpunit.xml.dist',
+        '!LolitaFramework/composer.json',
+        '!LolitaFramework/composer.lock',
+        '!LolitaFramework/ruleset.xml',
       ])
       .pipe(dest('./build/'))
   }
