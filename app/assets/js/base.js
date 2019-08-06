@@ -26,6 +26,6 @@ console.log(`
   ..,,::,,..      ..,,::;;;;;;;;;;,,                                                          ..,,,,..        ..,,,,                        
                         ..,,::::,,                                                                                                          
 
-Just fucking awesome gurievcreative@gmail.com
+Just fucking awesome therealguriev@gmail.com
 `);
 window.lf = {};
