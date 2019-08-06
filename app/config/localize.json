@@ -2,7 +2,7 @@
 	{
 		"handle": "events-settings",
 		"name": "eventsSettings",
-		"context": ["admin"],
+		"context": ["admin", "wp"],
 		"data": ["\\events\\Settings", "data"]
 	}
 ]
