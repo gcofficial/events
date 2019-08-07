@@ -8,8 +8,8 @@ License: MIT
 WordPress Event Calendar Plugin.
 
 == Description ==
-
-In this screencast you can see how it works https://drive.google.com/file/d/1uB6v-m1sihD79OkAvRgkGc_1-QacoRCu/view?usp=sharing
+![How it works](https://ps.w.org/lolita-events/assets/screenshot-1.gif)
+In this screencast you can see how it works [screencast](https://drive.google.com/file/d/1uB6v-m1sihD79OkAvRgkGc_1-QacoRCu/view?usp=sharing)
 
 **Development team**
 
@@ -31,6 +31,14 @@ Any help is appreciated. The project is open-source and we encourage you to part
 * [Repository](https://github.com/gcofficial/events)
 * [LinkedIn](https://www.linkedin.com/in/therealguriev/)
 * [Email](mailto:therealguriev@gmail.com)
+
+== Screenshots ==
+
+**How it works**
+
+**Add event**
+
+**Add Lolita Events block to post**
 
 
 == Installation ==
