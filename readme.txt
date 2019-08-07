@@ -1,8 +1,8 @@
 === Lolita Events ===
 Tags: events, calendar, lolita, lolitaframework, ajax, noreload, fast, nice
-Requires at least: 3.7
-Tested up to: 4.7.2
-Stable tag: 3.3
+Requires at least: 5
+Tested up to: 5.2
+Stable tag: 5
 License: MIT
 
 WordPress Event Calendar Plugin.

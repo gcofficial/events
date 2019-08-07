@@ -1,6 +1,6 @@
 ( function( blocks, element ) {
     var el = element.createElement;
-    blocks.registerBlockType( 'gutenberg-examples/example-01-basic', {
+    blocks.registerBlockType( 'lolita/events', {
         title: 'Lolita Events',
         icon: wp.element.createElement(
             'svg',
